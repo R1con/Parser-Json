@@ -11,7 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 
-class ParserJson {
+public class ParserJson {
     private static IP ip = new IP();
 
     public static void main(String[] args) throws IOException {
