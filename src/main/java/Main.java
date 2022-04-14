@@ -1,4 +1,4 @@
-import Parser.ParserJson;
+import parser.ParserJson;
 import dto.IpDto;
 import writer.FileWrite;
 
@@ -12,6 +12,7 @@ public class Main {
 
         String url = "https://api.ipify.org/?format=json";
         String path = "C:\\Users\\igorp\\Desktop\\ip-info.txt";
+
 
         IpDto ipDto = parser.parseFromUrlToJsonObject(url);
         fileWrite.writeJsonObjectToFile(path, ipDto.getIp());
