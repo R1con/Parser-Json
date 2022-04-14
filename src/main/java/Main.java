@@ -9,11 +9,11 @@ public class Main {
         ParserJson parser = new ParserJson();
         FileWrite fileWrite = new FileWrite();
 
-        final String URl = "https://api.ipify.org/?format=json";
+        final String URL = "https://api.ipify.org/?format=json";
         final String PATH = "C:\\Users\\igorp\\Desktop\\ip-info.txt";
 
 
-        IpDto ipDto = parser.parseFromUrlToJsonObject(URl);
+        IpDto ipDto = parser.parseFromUrlToJsonObject(URL);
         fileWrite.writeJsonObjectToFile(PATH, ipDto.getIp());
     }
 }
