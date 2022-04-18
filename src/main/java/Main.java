@@ -15,6 +15,7 @@ public class Main {
         final String PATH_JSON = "C:\\Users\\igorp\\Desktop\\tst.txt";
         final String PATH_FILE = "C:\\Users\\igorp\\Desktop\\ip-info.txt";
 
+        //IpDto ipDto = Jsonparser.parseJson(URL);
         IpDto ipDto = fileParser.parseJson(PATH_JSON);
         fileWriter.writeToFile(PATH_FILE, ipDto.getIp());
 
