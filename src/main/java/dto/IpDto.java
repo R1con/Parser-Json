@@ -1,10 +1,11 @@
 package dto;
 
-public class IpDto {
-    private String ip;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
-    public String getIp() {
-        return ip;
-    }
+@Data
+@AllArgsConstructor
+public class IpDto {
+    String ip;
 }
 
