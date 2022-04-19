@@ -1,12 +1,12 @@
-package parser;
+package task1.parser;
 
 import com.google.gson.*;
-import dto.IpDto;
+import task1.dto.IpDto;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import org.jsoup.select.Elements;
-import strategy.ParserStrategy;
+import task1.strategy.ParserStrategy;
 
 import java.io.*;
 

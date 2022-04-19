@@ -1,4 +1,4 @@
-package writer;
+package task1.writer;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -12,8 +12,10 @@ public class FileWriter {
         try (BufferedWriter writerFile = Files.newBufferedWriter(Path.of(path), StandardCharsets.UTF_8)) {
             writerFile.write(message);
             System.out.println("File wrote in " + path);
+        }catch (NullPointerException ex) {
+            ex.printStackTrace();
         } catch (IOException ex) {
-            System.err.println("Error: " + ex.getMessage());
+            ex.getMessage();
         }
     }
 }
