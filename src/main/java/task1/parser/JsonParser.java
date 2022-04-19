@@ -11,13 +11,13 @@ import task1.strategy.ParserStrategy;
 import java.io.*;
 
 public class JsonParser implements ParserStrategy {
-    private final static Gson gson = new GsonBuilder().create();
+    private final static Gson GSON = new GsonBuilder().create();
 
     @Override
     public IpDto parseJson(String path) throws IOException {
         Document document = Jsoup.connect(path).ignoreContentType(true).get();
         Elements elements = document.select("body");
 
-        return gson.fromJson(elements.text(), IpDto.class);
+        return GSON.fromJson(elements.text(), IpDto.class);
     }
 }
