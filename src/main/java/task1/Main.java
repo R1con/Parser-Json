@@ -14,6 +14,8 @@ public class Main {
 
     private static final FileWriter FILE_WRITER = new FileWriter();
 
+
+
     public static void main(String[] args) throws IOException {
 
         final String URL = "https://api.ipify.org/?format=json";
