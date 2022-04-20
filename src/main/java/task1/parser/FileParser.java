@@ -6,13 +6,14 @@ import task1.strategy.ParserStrategy;
 import java.io.*;
 
 public class FileParser implements ParserStrategy {
-    private String ip;
+    private final String PATH_JSON = "C:\\Users\\igorp\\Desktop\\tst.txt";
 
     @Override
-    public IpDto parseJson(String path) throws IOException {
-        JsonReader reader = new JsonReader(new FileReader(path));
+    public IpDto parseJson() throws IOException {
+        JsonReader reader = new JsonReader(new FileReader(PATH_JSON));
 
         reader.beginObject();
+        String ip = null;
         while (reader.hasNext()) {
             String name = reader.nextName();
             if (name.equals("ip"))

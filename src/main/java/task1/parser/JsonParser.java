@@ -12,10 +12,11 @@ import java.io.*;
 
 public class JsonParser implements ParserStrategy {
     private final static Gson GSON = new GsonBuilder().create();
+    private final String URL = "https://api.ipify.org/?format=json";
 
     @Override
-    public IpDto parseJson(String path) throws IOException {
-        Document document = Jsoup.connect(path).ignoreContentType(true).get();
+    public IpDto parseJson() throws IOException {
+        Document document = Jsoup.connect(URL).ignoreContentType(true).get();
         Elements elements = document.select("body");
 
         return GSON.fromJson(elements.text(), IpDto.class);

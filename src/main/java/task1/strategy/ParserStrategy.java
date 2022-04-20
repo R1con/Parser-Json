@@ -5,5 +5,5 @@ import task1.dto.IpDto;
 import java.io.IOException;
 
 public interface ParserStrategy {
-    IpDto parseJson(String path) throws IOException;
+    IpDto parseJson() throws IOException;
 }

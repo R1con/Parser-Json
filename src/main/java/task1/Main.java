@@ -15,25 +15,23 @@ public class Main {
     private static final FileWriter FILE_WRITER = new FileWriter();
 
     public static void main(String[] args) throws IOException {
+        final String ARGUMENT_URL = "url";
+        final String ARGUMENT_FILE = "file";
 
-        final String URL = "https://api.ipify.org/?format=json";
-        final String PATH_JSON = "C:\\Users\\igorp\\Desktop\\tst.txt";
-        final String PATH_FILE = "C:\\Users\\igorp\\Desktop\\ip-info.txt";
-
-        if (args[0].equals("url")) {
+        if (args[0].equals(ARGUMENT_URL)) {
             parserStrategy = new JsonParser();
-            ipDto = parserStrategy.parseJson(URL);
-        } else if (args[0].equals("file")) {
+            ChoosingStrategy(parserStrategy);
+        } else if (args[0].equals(ARGUMENT_FILE)) {
             parserStrategy = new FileParser();
-            ipDto = parserStrategy.parseJson(PATH_JSON);
+            ChoosingStrategy(parserStrategy);
         } else {
             System.out.println("Incorrect input. Input url or file.");
         }
 
-        try {
-            FILE_WRITER.writeToFile(PATH_FILE, ipDto.getIp());
-        } catch (NullPointerException e) {
-            e.getMessage();
-        }
+    }
+
+    private static void ChoosingStrategy(ParserStrategy parserStrategy) throws IOException {
+        ipDto = parserStrategy.parseJson();
+        FILE_WRITER.writeToFile(ipDto.getIp());
     }
 }
