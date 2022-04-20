@@ -6,6 +6,6 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class IpDto {
-    String ip;
+    private String ip;
 }
 
