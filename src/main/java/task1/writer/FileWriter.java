@@ -7,11 +7,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class FileWriter {
-
-    public void writeToFile(String path, String message) {
-        try (BufferedWriter writerFile = Files.newBufferedWriter(Path.of(path), StandardCharsets.UTF_8)) {
+    private final String PATH_FILE = "C:\\Users\\igorp\\Desktop\\ip-info.txt";
+    public void writeToFile(String message) {
+        try (BufferedWriter writerFile = Files.newBufferedWriter(Path.of(PATH_FILE), StandardCharsets.UTF_8)) {
             writerFile.write(message);
-            System.out.println("File wrote in " + path);
+            System.out.println("File wrote in " + PATH_FILE);
         }catch (NullPointerException ex) {
             ex.printStackTrace();
         } catch (IOException ex) {
