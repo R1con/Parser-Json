@@ -13,7 +13,7 @@ public enum TypeOfDataStorage {
     private final String TYPE_STORAGE;
     private final ParserStrategy STRATEGY;
 
-    public ParserStrategy getSTRATEGY() {
+    public ParserStrategy getStrategy() {
         return STRATEGY;
     }
 
