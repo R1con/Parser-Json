@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class Main {
     private static final FileWriter FILE_WRITER = new FileWriter();
-    private static IpDto ipDto;
+    private static IpDto ipDto = new IpDto();
 
     public static void main(String[] args) throws IOException {
         if (args.length != 0) {

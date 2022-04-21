@@ -8,6 +8,7 @@ import java.io.*;
 public class FileParser implements ParserStrategy {
     private final String PATH_JSON = "C:\\Users\\igorp\\Desktop\\tst.txt";
     private final Gson GSON = new Gson();
+
     @Override
     public IpDto parseJson() throws IOException {
         File file = new File(PATH_JSON);
