@@ -15,7 +15,7 @@ public class Main {
             ipDto = TypeOfDataStorage.getTypeByArgument(args[0]).getStrategy().parseJson();
             FILE_WRITER.writeToFile(ipDto.getIp());
         } else {
-            throw new RuntimeException("Type of: " + Arrays.toString(TypeOfDataStorage.values()));
+            throw new RuntimeException("Input argument: " + Arrays.toString(TypeOfDataStorage.values()));
         }
     }
 }
