@@ -1,11 +1,11 @@
 package task1.parser;
 
 import com.google.gson.*;
+import task1.TypeOfDataStorage;
 import task1.dto.IpDto;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import org.jsoup.select.Elements;
 import task1.strategy.ParserStrategy;
 
 import java.io.*;

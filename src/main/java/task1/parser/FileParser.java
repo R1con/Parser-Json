@@ -1,26 +1,18 @@
 package task1.parser;
 
-import com.google.gson.stream.JsonReader;
+import com.google.gson.Gson;
 import task1.dto.IpDto;
 import task1.strategy.ParserStrategy;
 import java.io.*;
 
 public class FileParser implements ParserStrategy {
     private final String PATH_JSON = "C:\\Users\\igorp\\Desktop\\tst.txt";
-
+    private final Gson GSON = new Gson();
     @Override
     public IpDto parseJson() throws IOException {
-        JsonReader reader = new JsonReader(new FileReader(PATH_JSON));
+        File file = new File(PATH_JSON);
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
 
-        reader.beginObject();
-        String ip = null;
-        while (reader.hasNext()) {
-            String name = reader.nextName();
-            if (name.equals("ip"))
-                ip = reader.nextString();
-        }
-        reader.endObject();
-
-        return new IpDto(ip);
+        return GSON.fromJson(bufferedReader, IpDto.class);
     }
 }
