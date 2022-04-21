@@ -8,11 +8,10 @@ import java.util.Arrays;
 
 public class Main {
     private static final FileWriter FILE_WRITER = new FileWriter();
-    private static IpDto ipDto = new IpDto();
 
     public static void main(String[] args) throws IOException {
         if (args.length != 0) {
-            ipDto = TypeOfDataStorage.getTypeByArgument(args[0]).getStrategy().parseJson();
+            IpDto ipDto = TypeOfDataStorage.getTypeByArgument(args[0]).getSTRATEGY().parseJson();
             FILE_WRITER.writeToFile(ipDto.getIp());
         } else {
             throw new RuntimeException("Input argument: " + Arrays.toString(TypeOfDataStorage.values()));

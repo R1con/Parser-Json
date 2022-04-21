@@ -10,21 +10,21 @@ public enum TypeOfDataStorage {
     URL("url", new JsonParser()),
     FILE("file", new FileParser());
 
-    private String typeStorage;
-    private ParserStrategy strategy;
+    private final String TYPE_STORAGE;
+    private final ParserStrategy STRATEGY;
 
-    public ParserStrategy getStrategy() {
-        return strategy;
+    public ParserStrategy getSTRATEGY() {
+        return STRATEGY;
     }
 
     TypeOfDataStorage(String typeStorage, ParserStrategy strategy) {
-        this.typeStorage = typeStorage;
-        this.strategy = strategy;
+        this.TYPE_STORAGE = typeStorage;
+        this.STRATEGY = strategy;
     }
 
     public static TypeOfDataStorage getTypeByArgument(String storage) {
         for (TypeOfDataStorage type : TypeOfDataStorage.values()) {
-            if (type.typeStorage.equals(storage))
+            if (type.TYPE_STORAGE.equals(storage))
                 return type;
         }
 
