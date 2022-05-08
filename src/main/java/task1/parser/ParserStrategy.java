@@ -1,4 +1,4 @@
-package task1.strategy;
+package task1.parser;
 
 import task1.dto.IpDto;
 

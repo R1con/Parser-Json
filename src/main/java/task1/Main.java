@@ -1,6 +1,7 @@
 package task1;
 
 import task1.dto.IpDto;
+import task1.enums.TypeOfDataStorage;
 import task1.writer.FileWriter;
 
 import java.io.IOException;
@@ -16,5 +17,6 @@ public class Main {
         } else {
             throw new RuntimeException("Input argument: " + Arrays.toString(TypeOfDataStorage.values()));
         }
+
     }
 }

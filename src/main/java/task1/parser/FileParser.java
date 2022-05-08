@@ -2,7 +2,7 @@ package task1.parser;
 
 import com.google.gson.Gson;
 import task1.dto.IpDto;
-import task1.strategy.ParserStrategy;
+
 import java.io.*;
 
 public class FileParser implements ParserStrategy {
